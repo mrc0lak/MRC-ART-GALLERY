@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html data-bs-theme="dark">
+        <head runat="server">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>MRC Art Gallery</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+            <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+            <style>
+                    div.gallery {
+                    margin: 5px;
+                    border: 1px solid #ccc;
+                    float: left;
+                    width: 180px;
+                    height: 300px;
+                    }
+
+                    div.gallery:hover {
+                    border: 1px solid #777;
+                    }
+
+                    div.gallery img {
+                    width: 100%;
+                    height: 50%;
+                    object-fit:cover;
+                    }
+
+                    div.desc {
+                    padding: 15px;
+                    text-align: center;
+                    }
+
+                    .gallery.enlarged {
+                    width: 400px;
+                    height: 600px;
+                    z-index: 1;
+                }
+
+                #changingText {
+                font-size: 35px;
+                }
+
+                #randomImage {
+                  max-width: 50%;
+                  max-height: 50%;
+                }
+
+            </style>
+
+
+
+        </head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-black navbar-black">
+            <div class="container-fluid px-4">
+              <a class="navbar-brand" href="index.html">Sanat Galerisi</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse d-lg-flex justify-content-between" id="collapsibleNavbar">
+                <ul class="navbar-nav d-flex align-items-center">
+                  <li class="nav-item">
+                    <a class="nav-link" href="Ressamlar.html">Ressamlar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Tablolar.html">Tablolar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Tarihce.html">Tarihçe</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Görüş ve Öneriler</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav">
+                  <li class="nav-item me-3 d-flex align-items-center pb-3 pb-lg-0">
+                    <div class="input-group">
+                      <input type="search" class="form-control" placeholder="Arama" id="searchInput">
+                      <button class="btn btn-outline-secondary" type="button" id="searchButton">Ara</button>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <div class="btn-group">
+                      <a href="Giris.html?giris" class="btn btn-outline-secondary">Giriş Yap</a>
+                      <a href="Giris.html" class="btn btn-outline-secondary">Kayıt Ol</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+  </header>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div class="mb-3">
+                          <label for="recipient-name" class="col-form-label">Recipient:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                      <div class="mb-3">
+                          <label for="message-text" class="col-form-label">Message:</label>
+                          <textarea class="form-control" id="message-text"></textarea>
+                      </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Send message</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="container-fluid py-lg-3" style="background: url('Resimler/gokyuzu5.jpg')">
+
+    
+        <div style="background-color: black; margin-left: 308px; margin-right: 308px; padding-left: 50px; padding-top: 10px; padding-bottom: 50px; padding-right: 50px; border-style: ridge; border-color: #777; border-width: 1px;">  
+        <h1 id="changingText" style="text-align: center;">Sizin İçin Rastgele Günün Tablosu</h1>
+        <button onclick="changeImage()">Rastgele Tablo Seçmek İçin Tıklayınız</button>
+        <br><br>
+        <img style="border-style: ridge; border-color: #777; border-width: 3px;" id="randomImage" src="" alt="Rastgele Resim">
+        </div>
+        <br><br>
+        
+        
+        <div class="row">
+          <div class="col-lg-8 mx-auto border border-secondary p-1 bg-black d-flex justify-content-around">
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/asunday.jpg">
+                      <img src="Resimler/asunday.jpg" alt="Cinque Terre">
+                  </a>
+                  <div class="desc">A Sunday Afternoon on the Island of La Grande Jatte - Georges Seurat (1884-1886)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/atmoulin.jpg">
+                      <img src="Resimler/atmoulin.jpg" alt="Forest" >
+                  </a>
+                  <div class="desc">At the Moulin Rouge - Henri de Toulouse-Lautrec (1892-1895)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/BeethovenFrizi.jpg">
+                      <img src="Resimler/BeethovenFrizi.jpg" alt="Northern Lights" >
+                  </a>
+                  <div class="desc">Beethoven Frieze (Beethoven Frizi) - Gustav Klimt (1902)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/belleginazmi.jpg">
+                      <img src="Resimler/belleginazmi.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Persistence of Memory (Belleğin Azmi) - Salvador Dali (1931)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/christina.jpg">
+                      <img src="Resimler/christina.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Christina's World - Andrew Wyeth (1948)</div>
+              </div>
+              <script></script>
+          </div>
+          <div class="col-lg-8 mx-auto border border-secondary p-1 bg-black d-flex justify-content-around">
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/cyclops.jpg">
+                      <img src="Resimler/cyclops.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Cyclops - Odilon Redon (1898-1914)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/flaming.jpg">
+                      <img src="Resimler/flaming.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Flaming June - Frederic Leighton (1895)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/girlsballons.jpg">
+                      <img src="Resimler/girlsballons.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Girl with Balloon - Banksy (2002)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/ilkbahar.jpg">
+                      <img src="Resimler/ilkbahar.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Allegoria della Primavera (İlkbahar) - Sandro Botticelli (1478)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/jacktheripper.jpg">
+                      <img src="Resimler/jacktheripper.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Jack the Ripper's Bedroom - Walter Sickert (1907)</div>
+              </div>
+          </div>
+          <div class="col-lg-8 mx-auto border border-secondary p-1 bg-black d-flex justify-content-around">
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/kıyametgunu.jpg">
+                      <img src="Resimler/kıyametgunu.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Il Giudizio Universale (Kıyamet Günü) - Michelangelo (1541)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/lamort.jpg">
+                      <img src="Resimler/lamort.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">La Mort de Marat (Marat'ın Ölümü) - Jacques-Louis David (1793)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/ledejeuner.jpg">
+                      <img src="Resimler/ledejeuner.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Le Dejeuner sur l'herbe - Edouard Manet (1862-1863)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/lesdemo.jpg">
+                      <img src="Resimler/lesdemo.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Les Demoiselles d'Avignon - Pablo Picasso (1907)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/ophelia.jpg">
+                      <img src="Resimler/ophelia.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Ophelia - John Everett Millais (1851-1852)</div>
+              </div>
+          </div>
+          <div class="col-lg-8 mx-auto border border-secondary p-1 bg-black d-flex justify-content-around">
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/portrait.jpg">
+                      <img src="Resimler/portrait.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Portrait of Madame X - John Singer Sargent (1883-1884)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/portraitgustav.jpg">
+                      <img src="Resimler/portraitgustav.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Portrait of Adele Bloch-Bauer - Gustav Klimt (1907)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/self.jpg">
+                      <img src="Resimler/self.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Self-Portrait with Bandaged Ear - Vincent van Gogh (1889)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/theambassadors.jpg">
+                      <img src="Resimler/theambassadors.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">The Ambassadors - Hans Holbein (1533)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/thegross.jpg">
+                      <img src="Resimler/thegross.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">The Gross Clinic - Thomas Eakins (1875)</div>
+              </div>
+          </div>
+          <div class="col-lg-8 mx-auto border border-secondary p-1 bg-black d-flex justify-content-around">
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/thestorm.jpg">
+                      <img src="Resimler/thestorm.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">The Storm on the Sea of Galilee - Rembrandt van Rijn (1633)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/theswing.jpg">
+                      <img src="Resimler/theswing.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">The Swing - Jean-Honore (1767)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/twotahitian.jpg">
+                      <img src="Resimler/twotahitian.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Two Tahitian Women - Paul Gauguin (1899)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/untitled.jpg">
+                      <img src="Resimler/untitled.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Untitled - Jean-Michel Basquiat (1892)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/untitled.jpg">
+                      <img src="Resimler/potato.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Potato Eaters - Van Gogh (1885)</div>
+              </div>
+          </div>
+          <div class="col-lg-8 mx-auto border border-secondary p-1 bg-black d-flex justify-content-around">
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/yagmurdansonraavrupa.jpg">
+                      <img src="Resimler/yagmurdansonraavrupa.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Europe After the Rain II (Yağmurdan Sonra Avrupa II) - Max Ernst (1942)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/zevklerbahçesi.jpg">
+                      <img src="Resimler/zevklerbahçesi.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">The Garden of Delights (Dünyevi Zevkler Bahçesi) - Hieronymus Bosch (1504)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/saturno.jpg">
+                      <img src="Resimler/saturno.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">Saturno Devorando a un Hijo - Francisco Goya (1819-1823)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/thegreat.jpg">
+                      <img src="Resimler/thegreat.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">The Great Wave off Kanagawa - Katsushika Hokusai (1831)</div>
+              </div>
+              <div class="gallery">
+                  <a target="_blank" href="Resimler/thegreat.jpg">
+                      <img src="Resimler/thesleeping.jpg" alt="Mountains" >
+                  </a>
+                  <div class="desc">The Sleeping Gypsy (Uyuyan Çingene) - Henri Rousseau (1897)</div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-11"></div>
+            <div class="col-md-1">
+                <button id="SayfaBaşınaGit" style="bottom: 20px;">Sayfanın Başına Git</button>
+            </div>
+    </div>
+    <br><br>
+
+
+  <script src="js/Tablolar.js"></script>
+  <script src="js/Tablolar4.js"></script>
+  <script src="js/Tablolar2.js"></script>
+  <script src="js/Tablolar3.js"></script>
+  <script src="js/Tablolar5.js"></script>
+  <script src="js/tablolar6.js"></script>
+  
+  <footer class="w-100 position-relative text-center text-lg-start py-5">
+    <img class="position-absolute top-0 start-0 w-100 h-100" src="Resimler/footer.png" alt="" />
+    <div class="container w-100 text-center position-relative z-1">
+        <a href="https://www.instagram.com/mrc0lak" target="_blank" onmouseover="logoHover(this, true)" onmouseout="logoHover(this, false)">
+            <img src="Resimler/instagram.png" alt="instagram"></a>
+        <a href="https://tr.wikipedia.org/wiki/Anasayfa" target="_blank" onmouseover="logoHover(this, true)" onmouseout="logoHover(this, false)"> 
+            <img src="Resimler/facebook.png" alt="facebook"></a>
+        <a href="index.html" onmouseover="logoHover(this, true)" onmouseout="logoHover(this, false)"> 
+            <img src="Resimler/mr.png" alt="mr"></a>
+        <br><br>
+    <div class="row w-100 text-white text-center "><span>© 2024 Tüm Haklar Saklıdır. </span></div>
+    </div>
+</footer>
+  
+
+</body>
+</html>

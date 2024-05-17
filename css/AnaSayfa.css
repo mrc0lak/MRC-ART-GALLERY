@@ -1,0 +1,116 @@
+.slick-card a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.slick-card .card-main img {
+    border-radius: 30px 30px 0 0;
+}
+
+.slick-card .card-main .card-content {
+    border-radius: 0 0 50px 50px;
+    background-color: #fff;
+    color: black;
+    padding-bottom: .5rem;
+}
+
+    .slick-card .card-main .card-content p {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 12;
+    }
+
+.slick-card .card-main .card-category p {
+    margin-bottom: 0 !important;
+    letter-spacing: 3px;
+    transition: height .3s;
+}
+
+.slick-card a div img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.slick-card .card-category {
+    background-color: #243a94;
+}
+
+.slick-card .slick-list {
+    padding: 50px 0 60px 0 !important;
+}
+
+.slick-card .slick-slide {
+    transition: all .4s ease-in-out;
+    transform: scale(1);
+}
+
+    .slick-card .slick-slide.slick-center {
+        transform: scale(1.1);
+    }
+
+
+        .slick-card .slick-slide.slick-center .card-content {
+            transition: all .4s ease-in-out;
+        }
+
+        .slick-card .slick-slide.slick-center .floor {
+            transition: all .4s ease-in-out;
+            top: -50px;
+        }
+
+        .slick-card .slick-slide.slick-center .card-main .card-content p {
+            -webkit-line-clamp: 150;
+        }
+
+.slick-card .floor {
+    position: relative;
+    z-index: -10;
+    height: 150px;
+    background-color: #a9e495;
+    border: 20px solid #72d151;
+    border-radius: 50%;
+    top: -75px;
+    margin: 0 .5rem;
+}
+
+.slick-card .slick-slide {
+    margin: .25rem 1.5rem;
+}
+.card-main div:first-child{
+    height:400px
+}
+.card-main div:first-child img{
+height:100%;
+object-fit:cover
+}
+
+.mx-2 {
+    list-style: none;
+    display: inline-block;
+  }
+
+  .mx-2 a {
+    text-decoration: none;
+    display: block;
+  }
+
+  .mx-2 img {
+    transition: transform 0.3s ease;
+    width: 50px;
+  }
+  #kayan-yazi {
+    background-color: rgba(0, 0, 0, .7);
+    padding: 5px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    white-space: nowrap;
+}
+#yazi span {
+    display: none;
+}

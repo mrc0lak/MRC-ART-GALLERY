@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html data-bs-theme="dark">
+        <head runat="server">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>MRC Art Gallery</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+            <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+            <script>
+                function myFunction() {
+                    document.getElementById("demo").innerHTML = "Paragraph changed.";
+                }
+            </script>
+            
+                <style>
+                    div.gallery {
+                    margin: 5px;
+                    border: 1px solid #ccc;
+                    float: left;
+                    width: 180px;
+                    height: 300px;
+                    }
+
+                    div.gallery:hover {
+                    border: 1px solid #777;
+                    }
+
+                    div.gallery img {
+                    width: 100%;
+                    height: 50%;
+                    object-fit:cover;
+                    }
+
+                    div.desc {
+                    padding: 15px;
+                    text-align: center;
+                    }
+            </style>
+            
+        </head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-black navbar-black">
+            <div class="container-fluid px-4">
+              <a class="navbar-brand" href="index.html">Sanat Galerisi</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse d-lg-flex justify-content-between" id="collapsibleNavbar">
+                <ul class="navbar-nav d-flex align-items-center">
+                  <li class="nav-item">
+                    <a class="nav-link" href="Ressamlar.html">Ressamlar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Tablolar.html">Tablolar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Tarihce.html">Tarihçe</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Görüş ve Öneriler</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav">
+                  <li class="nav-item me-3 d-flex align-items-center pb-3 pb-lg-0">
+                    <div class="input-group">
+                      <input type="search" class="form-control" placeholder="Arama" id="searchInput">
+                      <button class="btn btn-outline-secondary" type="button" id="searchButton">Ara</button>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <div class="btn-group">
+                      <a href="Giris.html?giris" class="btn btn-outline-secondary">Giriş Yap</a>
+                      <a href="Giris.html" class="btn btn-outline-secondary">Kayıt Ol</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-lg-3" style="background: url('Resimler/gokyuzu5.jpg')">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div style="border: 1px solid black; padding: 10px; background-color:#333333">
+                    <div style="font-weight: bold; text-align: center; font-size: x-large;">Ünlü Ressamlar ve Tabloları</div>
+                    <ul>
+                        <li><button onclick="toggleDiv()"> van Gogh - Arles'teki Yatak Odası</button> </li>
+                        <div id="acilacakDiv">
+                            <img src="Resimler/arlesteki_yatak_odası.jpg" alt="arlesteki_yatak_odası">
+                        </div>
+                        <br>
+
+                        <li><button> Edvard Munch - Çığlık</button></li>
+                        <br>
+                        <button1 style="background-color:#777; border-style: ridge; color: white;"> Tabloyu Gizle </button1>
+                        <br>
+                        <button2 style="background-color: #777; border-style: ridge; color: white;"> Tabloyu Göster </button2>
+                        <div1>
+                            <img src="Resimler/cıglık.jpg" alt="cıglık">
+                        </div1>
+                        <br><br>
+
+                        <li><button onclick="toggleDiv2()">Pablo Picasso - Guernica</button></li>
+                        <div id="acilacakDiv2">
+                            <img src="Resimler/guernica.jpg" alt="guernica">
+                        </div>
+                        <br>
+
+                        <li><button onclick="toggleDiv3()">Leonardo Da Vinci - Mona Lisa</button></li>
+                        <div id="acilacakDiv3">
+                            <img src="Resimler/mona_lisa2.jpg" alt="monalisa">
+                        </div>
+                        <br>
+
+                        <li><button onclick="toggleDiv4()">Johannes Vermeer - Genç Kadının Portresi</button></li>
+                        <div id="acilacakDiv4">
+                            <img src="Resimler/genc_kadın.jpg" alt="genc kadın">
+                        </div>
+                        <br>
+
+                        <li><button onclick="toggleDiv5()">Osman Hamdi Bey - Kaplumbağa Terbiyecisi</button></li>
+                        <div id="acilacakDiv5">
+                            <img src="Resimler/kaplumbaga_terbiyecisi.jpg" alt="kaplumbaga terbiyecisi">
+                        </div>
+                        <br>
+
+                        <li><button onclick="toggleDiv6()">Michelangelo Buonarroti - Adem'in Doğuşu</button></li>
+                        <div id="acilacakDiv6">
+                            <img src="Resimler/ademin_dogusu.jpg" alt="ademin_dogusu">
+                        </div>
+                        <br>
+
+                        <li><button onclick="toggleDiv7()">Gustav Klimt - Öpücük</button></li>
+                        <div id="acilacakDiv7">
+                            <img src="Resimler/opucuk.jpg" alt="opucuk">
+                        </div>
+                        <br>
+
+                        <li><button onclick="toggleDiv8()">Claude Monet - İzlenim- Gün Doğumu</button></li>
+                        <div id="acilacakDiv8">
+                            <img src="Resimler/izlenimin_dogusu.jpg" alt="izlenimin_dogusu">
+                        </div>
+                        <br>
+
+                        <li><button onclick="toggleDiv9()">Sandro Botticelli - Primavera</button></li>
+                        <div id="acilacakDiv9">
+                            <img src="Resimler/primavera.jpg" alt="primavera">
+                        </div>
+                        <br>
+
+                        <li><button onclick="toggleDiv10()">Johannes Vermeer - Gitar Çalan Kız</button></li>
+                        <div id="acilacakDiv10">
+                            <img src="Resimler/gitar_calan_kız.jpeg" alt="gitar_calan_kız">
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11"></div>
+                <div class="col-md-1">
+                    <button id="SayfaBaşınaGit" style="bottom: 20px;">Sayfanın Başına Git</button>
+                </div>
+        </div>
+        <br><br>
+
+
+    <script src="js/Ressamlar4.js"></script>
+    <script src="js/Ressamlar.js"></script>
+    <script src="js/Ressamlar5.js"></script>
+    <script src="js/Ressamlar6.js"></script>
+    <script src="js/Ressamlar7.js"></script>
+    
+    <footer class="w-100 position-relative text-center text-lg-start py-5">
+        <img class="position-absolute top-0 start-0 w-100 h-100" src="Resimler/footer.png" alt="" />
+        <div class="container w-100 text-center position-relative z-1">
+            <a href="https://www.instagram.com/mrc0lak" target="_blank" onmouseover="logoHover(this, true)" onmouseout="logoHover(this, false)">
+                <img src="Resimler/instagram.png" alt="instagram"></a>
+            <a href="https://tr.wikipedia.org/wiki/Anasayfa" target="_blank" onmouseover="logoHover(this, true)" onmouseout="logoHover(this, false)"> 
+                <img src="Resimler/facebook.png" alt="facebook"></a>
+            <a href="index.html" onmouseover="logoHover(this, true)" onmouseout="logoHover(this, false)"> 
+                <img src="Resimler/mr.png" alt="mr"></a>
+            <br><br>
+        <div class="row w-100 text-white text-center "><span>© 2024 Tüm Haklar Saklıdır. </span></div>
+        </div>
+    </footer>
+
+</body>
+</html>

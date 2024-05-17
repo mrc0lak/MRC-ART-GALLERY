@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <html data-bs-theme="dark">
+        <head runat="server">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>MRC Art Gallery</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+            <link rel="stylesheet" href="css/Tarihce.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+            <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+            <script>
+                function myFunction() {
+                    document.getElementById("demo").innerHTML = "Paragraph changed.";
+                }
+            </script>
+        </head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-black navbar-black">
+            <div class="container-fluid px-4">
+              <a class="navbar-brand" href="index.html">Sanat Galerisi</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse d-lg-flex justify-content-between" id="collapsibleNavbar">
+                <ul class="navbar-nav d-flex align-items-center">
+                  <li class="nav-item">
+                    <a class="nav-link" href="Ressamlar.html">Ressamlar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Tablolar.html">Tablolar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Tarihce.html">Tarihçe</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Görüş ve Öneriler</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav">
+                  <li class="nav-item me-3 d-flex align-items-center pb-3 pb-lg-0">
+                    <div class="input-group">
+                      <input type="search" class="form-control" placeholder="Arama" id="searchInput">
+                      <button class="btn btn-outline-secondary" type="button" id="searchButton">Ara</button>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <div class="btn-group">
+                      <a href="Giris.html?giris" class="btn btn-outline-secondary">Giriş Yap</a>
+                      <a href="Giris.html" class="btn btn-outline-secondary">Kayıt Ol</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="saat">
+        <h2>Dijital Saat</h2>
+        <div class="clock-container">
+            <div class="clock-items"> <p id="hour">15</p></div>
+            <div class="clock-items"> <p id="minute">20</p></div>
+            <div class="clock-items"> <p id="second">42</p></div>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid py-lg-3">
+        <style>
+            body {
+              background: url(Resimler/gokyuzu5.jpg);
+
+              background-repeat: no-repeat;
+              
+            }
+            </style>
+        <div class="row class">
+            <div class="col-lg-8 mx-auto border border-secondary p-1 bg-black">
+                <h3 style="text-align: center;">MRC Sanat Galerisi</h3>
+                <p>
+                    MRC Sanat Galerisi, 1990 yılında sanatseverler için bir buluşma noktası olarak kuruldu. Galeri, kuruluşundan bu yana hem yerel hem de uluslararası sanatçıların eserlerine ev sahipliği yaparak sanatın çeşitli yönlerini keşfetmeyi amaçladı. Başlangıçta küçük bir mekanda faaliyet gösteren galeri, zamanla sanatseverlerin ilgisini çekerek büyüdü ve 2000 yılında daha geniş bir alana taşındı.<br />
+                    Yıllar içinde MRC Sanat Galerisi, dünyaca ünlü ressamların eserlerine ev sahipliği yaparak sanatseverlere ilham verdi. Picasso, Van Gogh, Monet, Da Vinci gibi ünlü isimlerin başyapıtları, galerinin koleksiyonunun temelini oluşturdu. Ayrıca, galeri genç ve yetenekli sanatçıları da destekleyerek onların eserlerini sergileyip tanıtmaya önem verdi.<br />
+                    2005 yılında, MRC Sanat Galerisi dijital dünyaya adım attı ve sanatseverler için çevrimiçi bir platform oluşturdu. Web sitesi aracılığıyla, sanatseverler sanat eserlerini inceleyebilir, sanatçılar hakkında bilgi edinebilir ve galeri etkinliklerine katılabilirler. MRC Sanat Galerisi, sanatı herkesle buluşturmayı ve sanatseverlerle etkileşimi artırmayı hedefleyen bir çevrimiçi topluluk oluşturmayı amaçlıyor.<br />
+                    Bugün, MRC Sanat Galerisi dünya çapında bir üne sahip olup, sanatseverlere sanatın gücünü keşfetme ve deneyimleme fırsatı sunmaya devam ediyor. Gelecekte de sanatın evrenselliğini ve etkisini genişletmeye devam etmek için çaba gösterecek.<br />
+                </p>
+                <br>
+
+                <button id="hide">Tabloları Gizle</button>
+                <button id="show">Tabloları Göster</button>
+                <br>
+                <br>
+                <div class="d-flex justify-content-around">
+                    <img src="Resimler/time.jpg" style="height: 200px" />
+                    <img src="Resimler/inceleme.jpg" style="height: 200px" />
+                    <img src="Resimler/resiminceleme.jpg" style="height: 200px" />
+                    <img src="Resimler/sbm.jpg" style="height: 200px" />
+                </div>
+                
+                <br><br>
+                <hr>
+                <br>
+                <div>
+                    <iframe src="index.html" name="iframe_a" height="300px" width="100%" title="Iframe Example"></iframe>
+                </div>
+
+                <br>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <br><br><br>
+    <div style="opacity: 1; color: black; font-size:large; width: 500px; border-radius: 5px; margin-left: 350px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        <p style="text-align: center; font-size: x-large;">İletişim</p>
+        <button1 style="background-color: #777; color: white; padding:.1rem 1rem; border-radius: 8px; border-style:groove; border-color: black;">İletişim bilgilerini göstermek/gizlemek için tıklayınız</button1><br><br>
+        <p id="p1">Telefon Numarası: 0352-xxx-xxxx</p>
+        <p id="p2">Fax: xxx-xxx-xxx</p>
+        <p id="p3">Adres: Kocasinan/Kayseri</p>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-11"></div>
+                <div class="col-md-1">
+                    <button id="SayfaBaşınaGit" style="bottom: 20px;">Sayfanın Başına Git</button>
+                </div>
+        </div>
+        <br><br>
+    
+    <script src="js/Tarihçe2.js"></script>
+    <script src="js/Tarihçe.js"></script>
+    <script src="js/tarihçe3.js"></script>
+    <script src="js/tarihçe4.js"></script>
+    <script src="js/Tarihçe5.js"></script>
+    <script src="js/Tarihçe6.js"></script>
+
+    <footer class="w-100 position-relative text-center text-lg-start py-5">
+        <img class="position-absolute top-0 start-0 w-100 h-100" src="Resimler/footer.png" alt="" />
+        <div class="container w-100 text-center position-relative z-1">
+            <a href="https://www.instagram.com/mrc0lak" target="_blank" onmouseover="logoHover(this, true)" onmouseout="logoHover(this, false)">
+                <img src="Resimler/instagram.png" alt="instagram"></a>
+            <a href="https://tr.wikipedia.org/wiki/Anasayfa" target="_blank" onmouseover="logoHover(this, true)" onmouseout="logoHover(this, false)"> 
+                <img src="Resimler/facebook.png" alt="facebook"></a>
+            <a href="index.html" onmouseover="logoHover(this, true)" onmouseout="logoHover(this, false)"> 
+                <img src="Resimler/mr.png" alt="mr"></a>
+            <br><br>
+        <div class="row w-100 text-white text-center "><span>© 2024 Tüm Haklar Saklıdır. </span></div>
+        </div>
+    </footer>
+
+</body>
+</html>

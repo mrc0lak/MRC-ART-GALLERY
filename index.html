@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html data-bs-theme="dark">
+        <head runat="server">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>MRC Art Gallery</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+            <link rel="stylesheet" href="css/AnaSayfa.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+            <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+            <script>
+                function myFunction() {
+                    document.getElementById("demo").innerHTML = "Paragraph changed.";
+                }
+            </script>
+        </head>
+        <body>
+
+            <header>
+                <nav class="navbar navbar-expand-lg bg-black navbar-black">
+                    <div class="container-fluid px-4">
+                      <a class="navbar-brand" href="index.html">Sanat Galerisi</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#collapsibleNavbar">
+                          <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse d-lg-flex justify-content-between" id="collapsibleNavbar">
+                        <ul class="navbar-nav d-flex align-items-center">
+                          <li class="nav-item">
+                            <a class="nav-link" href="Ressamlar.html">Ressamlar</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="Tablolar.html">Tablolar</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="Tarihce.html">Tarihçe</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Görüş ve Öneriler</a>
+                          </li>
+                        </ul>
+                        <ul class="navbar-nav">
+                          <li class="nav-item me-3 d-flex align-items-center pb-3 pb-lg-0">
+                            <div class="input-group">
+                              <input type="search" class="form-control" placeholder="Arama" id="searchInput">
+                              <button class="btn btn-outline-secondary" type="button" id="searchButton">Ara</button>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="btn-group">
+                              <a href="Giris.html?giris" class="btn btn-outline-secondary">Giriş Yap</a>
+                              <a href="Giris.html" class="btn btn-outline-secondary">Kayıt Ol</a>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+            </header>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Message:</label>
+                                    <textarea class="form-control" id="message-text"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Send message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100">
+                
+            </div>
+            <div class="container-fluid py-lg-3" style="background: url('Resimler/gokyuzu5.jpg')">
+            
+                <div class="container class">
+                    <div>
+                        <div class="d-flex justify-content-center">
+                            <h1 id="yazi" style=" display: inline; text-align: center; background-color: rgba(0,0,0,.7);padding:.5rem 3rem; width: 3000px; height: 100px; ">GALERİMİZE HOŞ GELDİNİZ</h1>
+                    </div>
+                    <br><br>
+                    <div class="d-flex justify-content-center">
+                        <h3  class="kayan-yazi" style=" background-color:rgba(0,0,0,.7); padding-left: 3px; padding-top: 5px; padding-bottom: 5px; padding-right: 3px; ">DÜNYACA ÜNLÜ TABLOLAR</h3>
+                    </div>
+                    <div class="slick-card">
+                        <div>
+                            <div class="card-main">
+                                <div>
+                                    <img src="Resimler/ilkbahar.jpg" class="w-100" />
+                                </div>
+                                <span class="card-category text-white text-center">
+                                    <h6 class="mb-0 text-success text-bg-dark ">Allegoria della Primavera (İlkbahar) - Sandro Botticelli(1478)</h6>
+                                </span>
+                                <div class="card-content px-4">
+                                    <p>
+                                        Sandro Botticelli'nin "Allegoria della Primavera" veya "İlkbahar Alegorisi," 1478 yılında tamamlanan
+                        bir Rönesans tablosudur. Bu eser, İtalyan sanatının önemli eserlerinden biri olarak kabul edilir.
+                        İşte tablo hakkında kısa bir açıklama:
+        
+                        <br />
+                                        1. Mitolojik Tema: "İlkbahar Alegorisi," mitolojik figürlerle dolu bir sahneyi tasvir eder. Tablo,
+                        antik Roma ve Yunan mitolojisinin birleşimiyle, çeşitli tanrıçalar ve mitolojik karakterleri içerir.
+        
+                        <br />
+                                        2. Doğanın Canlanışı: İlkbaharı simgelerken, Botticelli tabloda doğanın uyanışını ve canlanışını
+                        temsil eder. Çiçekler, meyve ağaçları ve yeşilliklerle dolu bu renkli sahne, doğanın yeniden
+                        doğuşunu kutlar.
+        
+                        <br />
+                                        3. Zarif Kompozisyon: Sanatçının zarif üslubu ve figürler arasındaki dengeli kompozisyon, tabloyu
+                        estetik bir zenginlikle doldurur. İzleyici, çeşitli karakterlerin etrafında dönen bir dansa şahit
+                        olur.
+        
+                        <br />
+                                        4. Alegorik İfade: Botticelli, tablosunda alegorik bir dil kullanarak doğanın döngüsünü, aşkı,
+                        güzellik ve doğurganlığı sembolize eder. Her bir figür, doğanın farklı yönlerini temsil eder.
+        
+                        <br />
+                                        "Allegoria della Primavera," Botticelli'nin Rönesans dönemindeki yetenek ve yenilikçiliğini yansıtan
+                        önemli bir eserdir. Tablo, güzellik, mitoloji ve sembolizmle dolu bir anlam yumağı sunar.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card-main">
+                                <div>
+                                    <img src="Resimler/zevklerbahçesi.jpg" class="w-100" />
+                                </div>
+                                <span class="card-category text-white text-center">
+                                    <h6 class="mb-0 text-success text-bg-dark ">The Garden of Delights (Dünyevi Zevkler Bahçesi) -Hieronymus Bosch (1504)</h6>
+                                </span>
+                                <div class="card-content px-4">
+                                    <p>
+                                        Hieronymus Bosch'un "The Garden of Earthly Delights" (Dünyevi Zevkler Bahçesi), 1504 yılında
+        tamamlanan ünlü bir Rönesans tablosudur. İşte tablo hakkında kısa bir açıklama:
+        
+                                        <br />
+                                        1. Üç Panel Yapısı: Bu tablo, sol, orta ve sağ olmak üzere üç paneli içerir. Her bir panel farklı
+        bir sahneyi tasvir eder. Sol panelde cennet, orta panelde dünyevi zevkler bahçesi ve sağ panelde
+        cehennem resmedilmiştir.
+        
+                                        <br />
+                                        2. Mitolojik ve Dini Temalar: Bosch, tablosunda mitolojik ve dini temaları bir araya getirir.
+        Ortadaki panelde, insanların çeşitli dünyevi zevkleri ve günahları temsil eden tuhaf ve fantastik
+        sahneler bulunur.
+        
+                                        <br />
+                                        3. Fantastik ve İlginç Figürler: Bosch'un tabloları genellikle fantastik ve ilginç figürleri içerir.
+        Bu tabloda, hayvanlar, kuşlar ve çeşitli tuhaf yaratıklar, resmedilen sahneleri çeşitlendirir.
+        
+                                        <br />
+                                        4. Allegorik Anlatım: Bosch'un eserleri genellikle allegorik bir anlatı içerir. Dünyevi Zevkler
+        Bahçesi, günah ve erdem, cennet ve cehennem gibi kavramları işleyerek izleyiciye ahlaki bir mesaj
+        iletmeye çalışır.
+        
+                                        <br />
+                                        5. Detaylı Kompozisyon ve İkonografi: Bosch'un tabloları genellikle detaylı kompozisyonları ve
+        karmaşık ikonografileriyle dikkat çeker. İzleyici, tablonun derinliklerine inerek çeşitli detayları
+        keşfetmeye teşvik edilir.
+        
+                                        <br />
+                                        Hieronymus Bosch'un "Dünyevi Zevkler Bahçesi," sürrealist ve sembolik anlatımıyla, sanat tarihinde
+        öne çıkan başyapıtlardan biridir.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card-main">
+                                <div>
+                                    <img src="Resimler/yagmurdansonraavrupa.jpg" class="w-100" />
+                                </div>
+                                <span class="card-category text-white text-center">
+                                    <h6 class="mb-0 text-success text-bg-dark ">Europe After the Rain II (Yağmurdan Sonra Avrupa II) - Max Ernst (1942)</h6>
+                                </span>
+                                <div class="card-content px-4">
+                                    <p>
+                                        Max Ernst'in "Europe After the Rain II" (Yağmurdan Sonra Avrupa II), ünlü Alman dadaist ve
+         sürrealist ressamın 1942 yılında tamamladığı bir tablodur. İşte tablo hakkında kısa bir açıklama:
+        
+         <br />
+                                        1. Sürrealist Tarz: Ernst'in eserleri genellikle sürrealist ve dadaist tarzda yapılmıştır. "Europe
+         After the Rain II" da bu tarzın karakteristik özelliklerini taşır, rasyonel düşünceyi reddeder ve
+         rüyaların, bilinçaltının ve tuhaf imgelerin dünyasına odaklanır.
+        
+         <br />
+                                        2. Tuvaldeki Kaotik Manzara: Tablo, yağmurdan sonra bir avrupa manzarasını tasvir eder, ancak bu
+         manzara kaotik, distopik ve çoğu zaman gerçeküstüdür. Renk paleti, bozuk formlar ve soyut imgeler,
+         izleyiciye tuhaf bir atmosfer sunar.
+        
+         <br />
+                                        3. Dünya Savaşı Etkisi: 1942'de tamamlanan bu eser, II. Dünya Savaşı'nın ortasında Ernst'in yaşadığı
+         dönemi yansıtabilir. Tablo, savaşın yarattığı yıkım ve belirsizliği simgeler.
+        
+         <br />
+                                        4. Simgesel Unsurlar: Ernst, eserlerinde sıkça sembolizmi kullanır. "Europe After the Rain II" da
+         soyut ve sembolik imgeler aracılığıyla izleyiciye yorum yapma özgürlüğü tanır.
+        
+         <br />
+                                        Max Ernst'in "Yağmurdan Sonra Avrupa II," sanatçının sürrealist ve dadaist yaklaşımını yansıtan bir
+         eser olup, izleyicide düşünsel ve duygusal bir etki bırakma amacını taşır.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card-main">
+                                <div>
+                                    <img src="Resimler/kıyametgunu.jpg" class="w-100" />
+                                </div>
+                                <span class="card-category text-white text-center">
+                                    <h6 class="mb-0 text-success text-bg-dark ">Il Giudizio Universale (Kıyamet Günü) - Michelangelo(1541)</h6>
+                                </span>
+                                <div class="card-content px-4">
+                                    <p>
+                                        Michelangelo'nun "Il Giudizio Universale" ya da Türkçe adıyla "Kıyamet Günü," ünlü İtalyan Rönesans
+         sanatçısı Michelangelo Buonarroti tarafından 1541 yılında tamamlanan büyük bir fresktir. İşte tablo
+         hakkında kısa bir açıklama:
+        
+         <br />
+                                        1. Konu ve Tema: "Kıyamet Günü," Hristiyan inancına göre son gün ve mahşer gününe odaklanan bir
+         eserdir. Tablo, İsa'nın ikinci gelişi ve ölülerin dirilişi gibi kıyamet günü temalarını içerir.
+        
+         <br />
+                                        2. Kompozisyon: Fresk, geniş bir alana yayılan büyük bir kompozisyonla dikkat çeker. Alt kısımda
+         cennetliklerin ve cehennemliklerin ayrıldığı bir sahne bulunurken, üst kısımda ise İsa'nın yargı
+         kürsüsünde oturduğu bir görüntü yer alır.
+        
+         <br />
+                                        3. Anatomik Mükemmeliyet: Michelangelo'nun ünlü anatomi bilgisi ve figürlerin mükemmel tasarımı,
+         freskin estetik ve sanatsal değerini artırır. Figürlerin duygusal ifadeleri ve dramatik duruşları
+         eserin güçlü etkilerinden biridir.
+        
+         <br />
+                                        4. Dini Simgeler ve İkonografi: Freskte, İsa'nın yanı sıra peygamberler, melekler, azizler ve
+         ölülerin dirilişi gibi dini ikonografik unsurlar zengin bir şekilde işlenmiştir.
+        
+         <br />
+                                        Michelangelo'nun "Il Giudizio Universale," sanat tarihindeki en büyük yapıtlardan biri olarak kabul
+         edilir ve Rönesans'ın zirve eserlerinden biri olarak görülür.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card-main">
+                                <div>
+                                    <img src="Resimler/BeethovenFrizi.jpg" class="w-100" />
+                                </div>
+                                <span class="card-category text-white text-center">
+                                    <h6 class="mb-0 text-success text-bg-dark ">Beethoven Frieze (Beethoven Frizi) - Gustav Klimt (1902)</h6>
+                                </span>
+                                <div class="card-content px-4">
+                                    <p>
+                                        Gustav Klimt'in "Beethoven Frieze" (Beethoven Frizi), 1902 yılında tamamlanan bir tablodur ve
+        sanatçının Viyana Secession sergisine özel olarak tasarlanmıştır. İşte tablo hakkında kısa bir
+        açıklama:
+        
+                                        <br />
+                                        1. Beethoven ve 9. Senfoni: Klimt'in bu eseri, ünlü Alman besteci Ludwig van Beethoven'ın dokuzuncu
+        senfonisinin final bölümü olan "Ode to Joy" (Sevinç Marşı) ile ilgili bir yorum içerir. Tablo,
+        müziğin gücü ve özgürlük temasına odaklanır.
+        
+                                        <br />
+                                        2. Zengin Simgeler ve Figürler: Beethoven Frieze, çeşitli semboller ve figürlerle doludur. Eserde
+        aşk, ölüm, ahlaki çatışma ve insanın içsel yolculuğu gibi evrensel temalar, Klimt'in kendine özgü
+        stilinde işlenir.
+        
+                                        <br />
+                                        3. Panoramik Kompozisyon: Tablo, uzun bir duvar boyunca uzanan panoramik bir kompozisyona sahiptir.
+        Birbirine geçen figürler, organik formlar ve süslemeler, tabloyu zengin ve karmaşık bir görsel
+        deneyime dönüştürür.
+        
+                                        <br />
+                                        4. Art Nouveau (Secession) Tarzı: Gustav Klimt, Art Nouveau veya Viyana Secession tarzının
+        öncülerindendir. Bu tarz, detaylı süslemeler, sembolizm ve stilize figürleri içerir. Beethoven
+        Frieze, bu tarzın güzel örneklerinden biridir.
+        
+                                        <br />
+                                        5. Özgürlük ve Sanatın Gücü: Tablo, müzik ve sanatın insan ruhunu özgürleştirici gücünü vurgular.
+        Klimt'in sanat anlayışı ve Beethoven'ın müziği arasında bir bağlantı kurarak izleyiciye derin bir
+        duygu deneyimi sunar.
+        
+                                        <br />
+                                        Gustav Klimt'in "Beethoven Frieze," sanat tarihindeki önemli eserlerden biri olarak kabul edilir ve
+        sanatçının sembolizmi ve estetik zenginliğiyle tanınan özgün tarzını yansıtır.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card-main">
+                                <div>
+                                    <img src="Resimler/belleginazmi.jpg" class="w-100" />
+                                </div>
+                                <span class="card-category text-white text-center">
+                                    <h6 class="mb-0 text-success text-bg-dark ">Persistence of Memory (Belleğin Azmi) - Salvador Dali(1931)</h6>
+                                </span>
+                                <div class="card-content px-4">
+                                    <p>
+                                        Salvador Dalí'nin "The Persistence of Memory" (Belleğin Azmi), 1931 yılında tamamlanan ünlü bir
+        sürrealist tablodur. İşte bu tablo hakkında kısa bir açıklama:
+        
+                                        <br />
+                                        1. Eriyen Saatler: Tablo, eriyen ve sarkmış saatlerle dolu bir manzarayı tasvir eder. Bu saatler,
+        zamanın kaotik ve elastik bir şekilde algılandığını simgeler.
+        
+                                        <br />
+                                        2. Doğa ve Soyut Unsurlar: Arka planda yumuşak bir manzara ve cılız ağaçlar yer alır. Eriyen
+        saatlerle birlikte, bu soyut öğeler, rüyalar ve bilinçaltının derinliklerine yönelen sürrealist bir
+        atmosfer oluşturur.
+        
+                                        <br />
+                                        3. Sanatçının İmzası: Dalí'nin sanatsal imzası olarak kabul edilen eriyen saatler, zamansal esneklik
+        ve gerçeküstü bir dünya anlayışını vurgular. Saatlerin yumuşaklığı, sert ve sabit olanın geçici ve
+        değişken olduğuna dair bir göndermedir.
+        
+                                        <br />
+                                        4. Freud Etkisi: Dalí'nin eserleri, psikanaliz teorilerine özellikle de Sigmund Freud'un
+        çalışmalarına dayanır. "The Persistence of Memory," zamanın bilinçaltındaki izlerini ve insan
+        zihninin karmaşıklıklarını yansıtan bir öğe olarak öne çıkar.
+        
+                                        <br />
+                                        Bu tablo, Salvador Dalí'nin sürrealist tarzının ve zamansal distorsiyonunun en belirgin
+        örneklerinden biridir. Eser, zamanın geçiciliği ve gerçeklik algısının esnekliği gibi konuları
+        keşfeder.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card-main">
+                                <DİV>
+                                    <img src="Resimler/mona_lisa.jpg" class="w-100" />
+                                </DİV>
+                                <span class="card-category text-white text-center">
+                                    <h6 class="mb-0 text-success text-bg-dark ">Mona Lisa - Leonardo da Vinci</h6>
+                                </span>
+                                <div class="card-content px-4">
+                                    <p>
+                                        Leonardo da Vinci'nin İtalyanca "La Gioconda" bizim bildiğimiz adıyla Mona Lisa 1503 veya 1504 yılında yapılan,
+                                        sfumato tekniği ile yapılmış dünayca ünlü tablodur. İşte tablo hakkında kısa bir
+        açıklama:
+        
+                                        <br />
+                                        1. İtalya'nın Floransa şehrindeki Rönesans sırasında Leonardo da Vinci tarafından kavak bir pano üzerine Sfumato tekniği ile resmedilmiş 16. yüzyıl yağlı boya portresidir.
+         Resim hâlen Paris'teki Louvre Müzesi'nde Francesco del Giocondo'nun karısı, Lisa Gherardini Portresi başlığı altında sergilenmektedir.
+        
+                                        <br />
+                                        2. Gherardini ailesine mensup birisiydi ve tüccar Francesco del Giocondo'nun karısıydı. Giocondo'nun ikinci oğlu Andrea'nın doğumu anısına tablonun yapıldığı tahmin edilmektedir.
+        Tabloda oturan kadının kimliği, 2005 yılında, Heidelberg Üniversitesi'nin kütüphanesinde bulunan Agostino Vespucci'ye ait bir not ile tespit edilmiştir.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card-main">
+                                <div>
+                                    <img src="Resimler/nedimeler.jpg" class="w-100" />
+                                </div>
+                                <span class="card-category text-white text-center">
+                                    <h6 class="mb-0 text-success text-bg-dark ">Las Meninas (Nedimeler) - Diego Vazquez</h6>
+                                </span>
+                                <div class="card-content px-4">
+                                    <p>
+                                        Nedimeler (İspanyolca: Las Meninas), Geç Orta Çağ İspanyası'nın en önemli ressamı sayılan Diego Velazquez'in 1656 tarihli tablosudur.
+                                        İşte tablo hakkında kısa bir açıklama:
+        
+                                        <br />
+                                        1.Resmin sanat dünyasında bu derece etki yaratmasının en önemli sebepleri, resmin tüm kurallarının uygulanmış olmasıdır. 
+        Diğer taraftan da geri plandaki aynaya yansıyan görüntü ile bir derinlik ve üç boyutlu bir yanılsama duygusu yaratmasıdır.
+        
+                                        <br />
+                                        2. Ayna, aynı anda hem tabloda temsil edilen mekânı hem de onun temsil biçiminin bir parçasını kesip alan görülebilirlik içindeki yer değiştirmeyi sağlamaktadır; tablodan bakıldığında, zorunlu olarak iki kere görünmez olanı, tablonun ortasında göstermektedir.
+         Garip bir açıklama biçimi, ama tersine çevrildiğinde, yaşlı Pachero'nun Sevilla'da çalışan öğrencisine verdiği öğüt açığa çıkmaktadır: "Görüntü çerçeveden çıkmalıdır."
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card-main">
+                                <div>
+                                    <img src="Resimler/inciKupeliKız.jpg" class="w-100" />
+                                </div>
+                                <span class="card-category text-white text-center">
+                                    <h6 class="mb-0 text-success text-bg-dark "> Meisje met de parel (İnci Küpeli Kız) - Johannes Vermeer </h6>
+                                </span>
+                                <div class="card-content px-4">
+                                    <p>
+                                        İnci Küpeli Kız (Felemenkçe: Meisje met de parel),[1][2] Hollandalı ressam Johannes Vermeer'in başyapıtlarından biri olan tablodur.
+                                        Adından anlaşılacağı gibi odak noktası bir inci küpedir. İşte tablo hakkında kısa bir açıklama:
+        
+                                        <br />
+                                        1.Resim, Hollandalıların 17. yüzyılda portre olması amaçlanmayan bir 'baş' tanımıdır. 
+        Egzotik bir elbise, oryantal bir türban ve küpe olarak çok büyük bir inci olduğu düşünülen şey giyen Avrupalı bir kızı tasvir ediyor.
+                                        
+                                        <br />
+                                        2.Tabloda resmedilen kızın hayal ürünü değil de gerçek bir model olduğu ve kızı ya da bir yakını olduğu düşünülmektedir.
+        
+                                        <br />
+                                        3. Tablodan esinlenerek kitap yazılmış sonra da beyaz perdeye uyarlanmıştır. 
+        Tablo yağlı boya ile yapıldığı ve uzun süre korunamadığından zamanla boyada çatlamalar meydana gelmiş ve bu da tabloya farklı bir göz zenginliği sağlamıştır.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card-main">
+                                <div>
+                                    <img src="Resimler/yıldızlıGece.jpg" class="w-100" />
+                                </div>
+                                <span class="card-category text-white text-center">
+                                    <h6 class="mb-0 text-success text-bg-dark "> De sterrennacht (Yıldızlı Gece) - Vincent van Gogh</h6>
+                                </span>
+                                <div class="card-content px-4">
+                                    <p>
+                                        Yıldızlı Gece[1] (Felemenkçe: De sterrennacht), Hollandalı art izlenimci ressam Vincent van Gogh tarafından yapılan yağlı boya tablo. 
+                                        Haziran 1989'da yapılmıştır. İşte tablo hakkında kısa bir açıklama:
+        
+                                        <br />
+                                        1.Tablo, 1941 yılından beri New York'taki Museum of Modern Art müzesinin kalıcı koleksiyonunda bulunmaktadır.
+            Gogh'un en ünlü eserleriden biri olan Yıldızlı Gece, aynı zamanda Batı kültürünün en ünlü tablolarından biridir.
+                                        
+                                        <br />
+                                        2.Tabloda on bir yıldızın olması da kimi eleştirmenlere göre Van Gogh’un dini hassasiyetine işaret ediyor. 
+            Çünkü on bir yıldız Tevrat’taki Yaratılış bölümüne atıfta bulunuyor ve hemen ana kısımda görünen kilise de yine bu etkiyi güçlendirecek özellik taşıyor.
+        
+                                        <br />
+                                        3. Bir bütün olarak bakıldığında ise Yıldızlı Gece, Van Gogh’un hayal gücünü çok etkili bir şekilde kullanması ile öne çıkan başyapıtlarından birisi olmayı başarıyor.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+            <div class="col-md-11"></div>
+                    <div class="col-md-1">
+                        <button id="SayfaBaşınaGit" style="bottom: 20px;">Sayfanın Başına Git</button>
+                    </div>
+            </div>
+            <br><br>
+            
+            <script src="js/AnaSayfa.js"> </script>
+            <script src="js/AnaSayfa4.js"></script>
+            <script src="js/Anasayfa5.js"></script>
+            <script src="js/Anasayfa7.js"></script>
+            <script src="js/AnaSayfa8.js"></script>
+            <script src="js/AnaSayfa9.js"></script>
+
+            <footer class="w-100 position-relative text-center text-lg-start py-5">
+                <img class="position-absolute top-0 start-0 w-100 h-100" src="Resimler/footer.png" alt="" />
+                <div class="container w-100 text-center position-relative z-1">
+                    <a href="https://www.instagram.com/mrc0lak" target="_blank" onmouseover="logoHover(this, true)" onmouseout="logoHover(this, false)">
+                        <img src="Resimler/instagram.png" alt="instagram"></a>
+                    <a href="https://tr.wikipedia.org/wiki/Anasayfa" target="_blank" onmouseover="logoHover(this, true)" onmouseout="logoHover(this, false)"> 
+                        <img src="Resimler/facebook.png" alt="facebook"></a>
+                    <a href="index.html" onmouseover="logoHover(this, true)" onmouseout="logoHover(this, false)"> 
+                        <img src="Resimler/mr.png" alt="mr"></a>
+                    <br><br>
+                <div class="row w-100 text-white text-center "><span>© 2024 Tüm Haklar Saklıdır. </span></div>
+                </div>
+            </footer>
+    
+</body>
+</html>
